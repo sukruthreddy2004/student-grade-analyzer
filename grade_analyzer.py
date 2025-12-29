@@ -46,7 +46,7 @@ def analyze_student():
     lowest = min(subjects, key=subjects.get)
 
     print(f"\nReport for {name}")
-    print("-----------------------")
+    print("-------")
     print(f"Average Marks: {average:.2f}")
     print(f"Highest Scoring Subject: {highest} ({subjects[highest]})")
     print(f"Lowest Scoring Subject: {lowest} ({subjects[lowest]})\n")
@@ -64,7 +64,7 @@ def view_all_students():
 
 def menu():
     while True:
-        print("===== STUDENT GRADE ANALYZER =====")
+        print(" STUDENT GRADE ANALYZER ")
         print("1. Add Student Marks")
         print("2. Analyze Student Performance")
         print("3. View All Students")
