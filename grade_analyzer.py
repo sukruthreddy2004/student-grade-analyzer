@@ -18,17 +18,21 @@ def add_student():
     subjects = {}
 
     while True:
-        try:
-            marks = int(input(f"Enter marks for {subject}: "))
-            if marks < 0 or marks > 100:
-                print("Marks must be between 0 and 100.")
-                continue
-          break
-       except ValueError:
-              print("Invalid input. Please enter a number.")
+        subject = input("Enter subject name (or 'done' to finish): ")
+
         if subject.lower() == "done":
             break
-        marks = int(input(f"Enter marks for {subject}: "))
+
+        while True:
+            try:
+                marks = int(input(f"Enter marks for {subject}: "))
+                if marks < 0 or marks > 100:
+                    print("Marks must be between 0 and 100.")
+                    continue
+                break
+            except ValueError:
+                print("Invalid input. Please enter a number.")
+
         subjects[subject] = marks
 
     data = load_data()
@@ -37,6 +41,7 @@ def add_student():
 
     print("\nStudent data added successfully!\n")
 
+          
 def analyze_student():
     data = load_data()
     name = input("Enter student name to analyze: ")
